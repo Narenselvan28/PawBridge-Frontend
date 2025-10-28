@@ -1,17 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx'; // Path to the main application file
+import './index.css'; // Path to the global stylesheet
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Note: In modern React (v18+), ReactDOM.render is replaced by createRoot.
+
+// The entry point where the application is mounted
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+// Render the application
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
